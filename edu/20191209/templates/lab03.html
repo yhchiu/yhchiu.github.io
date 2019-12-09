@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+   <meta charset='UTF-8'>
+   <title>樹莓派 GPIO Web Server</title>
+   <link rel="stylesheet" href="/static/bootstrap.min.css">
+   <link rel="stylesheet" href="/static/bootstrap-theme.min.css">
+   <script src="/static/bootstrap.min.js"></script>
+</head>
+
+<body>
+   <h1>樹莓派 GPIO Web Server</h1>
+   {% for pin in pins %}
+   <h2>{{ pins[pin].name }}
+   {% if pins[pin].state == true %}
+      目前狀態 <strong>on</strong></h2><div class="row"><div class="col-md-2">
+      <a href="/{{pin}}/off" class="btn btn-block btn-lg btn-default" role="button">Turn off</a></div></div>
+   {% else %}
+      目前狀態 <strong>off</strong></h2><div class="row"><div class="col-md-2">
+      <a href="/{{pin}}/on" class="btn btn-block btn-lg btn-primary" role="button">Turn on</a></div></div>
+   {% endif %}
+   {% endfor %}
+
+   <h2>內建 LED</h2>
+   <div class="row"><div class="col-md-2">
+   <a href="/led/on" class="btn btn-block btn-lg btn-primary" role="button">開啟</a></div></div>
+   <div class="row"><div class="col-md-2">
+   <a href="/led/off" class="btn btn-block btn-lg btn-primary" role="button">關閉</a></div></div>
+
+   
+</body>
+</html>
