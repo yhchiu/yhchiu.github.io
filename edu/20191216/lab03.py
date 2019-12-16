@@ -2,8 +2,8 @@ import paho.mqtt.client as mqtt
 import Adafruit_DHT
 import time
 
-mqtt_username = "emailtest777"  # Adafruit IO 帳號
-mqtt_password = "52696a2ea66e4968b0ca27cdf2208b82"  # Adafruit IO 金鑰
+mqtt_username = ""  # Adafruit IO 帳號
+mqtt_password = ""  # Adafruit IO 金鑰
 
 mqtt_broker_server = "io.adafruit.com"
 mqtt_topic = mqtt_username + "/feeds/temp_humi"  # 頻道名稱 
