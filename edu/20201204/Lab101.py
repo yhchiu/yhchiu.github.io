@@ -5,11 +5,11 @@ import dht
 
 ifttt_key = "IFTTT的金鑰"
 
-sensor = dht.DHT11(Pin(0))                 # 使用 D3 腳位取得溫溼度物件
+sensor = dht.DHT11(Pin(0))                # 使用 D3 腳位取得溫溼度物件
 
 sta_if = network.WLAN(network.STA_IF)     # 取得無線網路介面
 sta_if.active(True)                       # 啟用無線網路
-sta_if.connect('無線網路名稱', '密碼')     # 連結無線網路
+sta_if.connect('無線網路名稱', '密碼')      # 連結無線網路
 while not sta_if.isconnected():           # 等待無線網路連上
     pass
 print("connected")
