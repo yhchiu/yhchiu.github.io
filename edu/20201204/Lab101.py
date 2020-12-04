@@ -4,6 +4,7 @@ import network, urequests
 import dht
 
 ifttt_key = "IFTTT的金鑰"
+ifttt_event = "fire"
 
 sensor = dht.DHT11(Pin(0))                # 使用 D3 腳位取得溫溼度物件
 
@@ -22,9 +23,9 @@ while True:
     if temperature > 20:
         if not msg_sent:
             print("發送緊報!")
-            urequests.get("https://maker.ifttt.com/trigger/fire/"
+            urequests.get("https://maker.ifttt.com/trigger/%s/"
                           "with/key/%s?value1=%2d" % (
-                          ifttt_key, temperature))
+                          ifttt_event, ifttt_key, temperature))
             msg_sent = True
     else:
         msg_sent = False
