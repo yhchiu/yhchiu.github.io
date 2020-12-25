@@ -26,9 +26,8 @@ while True:
         }
         # 因為 MicroPython 沒有 urlencode 函式, 所以必須先使用其他工具將訊息字串 urlencode
         payload = 'message=%E6%9C%89%E4%BA%BA%E6%89%93%E9%96%8B%E4%BF%9D%E9%9A%AA%E7%AE%B1%E5%9C%A8%E7%BF%BB%E6%89%BE%E6%9D%B1%E8%A5%BF%2C%E8%B6%95%E5%BF%AB%E5%8E%BB%E6%8A%93%E5%B0%8F%E5%81%B7'
-        r =urequests.post("https://notify-api.line.me/api/notify",
+        urequests.post("https://notify-api.line.me/api/notify",
                       headers = headers, data = payload)
-        print(r.json())
     
         # 暫停 60 秒, 避免短時間內一直收到重複的警報
         time.sleep(60)
